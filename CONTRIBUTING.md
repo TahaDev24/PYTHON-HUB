@@ -14,7 +14,7 @@ Thank you for considering a contribution. The project aims to make the Python ec
 Python 3.11 or newer is required.
 
 ~~~bash
-git clone https://github.com/TahaDev24/PYTHON-HUB.git
+git clone --branch feature/platform-foundation --single-branch https://github.com/TahaDev24/PYTHON-HUB.git
 cd PYTHON-HUB
 python -m venv .venv
 python -m pip install -e ".[dev]"
