@@ -52,6 +52,26 @@ const namesFa = {
   "package-management":"مدیریت پکیج","devops-deployment":"DevOps و استقرار","system-utilities":"ابزارهای سیستمی",
   "gui-development":"توسعه رابط کاربری","scientific-computing":"محاسبات علمی","documentation":"مستندسازی"
 };
+const descriptionsFa = {
+  "code-development":"ویرایشگرها، سرورهای زبان، پیمایش کد و گردش‌کار توسعه.",
+  "code-quality":"بررسی سبک، قالب‌بندی، بررسی نوع و بازآرایی کد.",
+  "security-auditing":"بررسی وابستگی‌ها، تحلیل ایستا و گزارش امنیتی.",
+  "testing-debugging":"اجرای تست، اشکال‌زدایی، پوشش تست و پروفایلینگ.",
+  "artificial-intelligence":"یادگیری ماشین، یادگیری عمیق، پردازش زبان و ابزار مدل‌ها.",
+  "data-engineering":"دیتافریم، محاسبات عددی، ETL و پایپ‌لاین داده.",
+  "database-systems":"ابزار SQL، ORM، مهاجرت و مدیریت پایگاه داده.",
+  "web-api":"فریم‌ورک‌های وب، کلاینت API و توسعه سرویس.",
+  "networking":"HTTP، سوکت، DNS، پروتکل‌ها و عیب‌یابی شبکه.",
+  "automation":"خودکارسازی وظایف، زمان‌بندی و هماهنگ‌سازی گردش‌کار.",
+  "file-processing":"پردازش سند، آرشیو، تصویر، صوت و ویدئو.",
+  "visualization":"نمودار، داشبورد، گزارش و تحلیل بصری.",
+  "package-management":"پکیج‌ها، محیط مجازی و مدیریت وابستگی‌ها.",
+  "devops-deployment":"کانتینر، CI/CD، استقرار و انتشار.",
+  "system-utilities":"پردازش‌ها، فایل‌سیستم و سنجه‌های سیستم‌عامل.",
+  "gui-development":"رابط دسکتاپ، ویجت و بسته‌بندی اپلیکیشن.",
+  "scientific-computing":"روش‌های عددی، شبیه‌سازی و گردش‌کار پژوهشی.",
+  "documentation":"تولید مستندات، مرجع API و انتشار دانش."
+};
 let locale = localStorage.getItem("python-hub-locale") === "fa" ? "fa" : "en";
 let currentView = "overview";
 let searchTerm = "";
@@ -79,7 +99,9 @@ function applyLocale() {
 function renderDomains() {
   const grid = $("#category-grid");
   if (currentView === "settings") {
-    grid.innerHTML = '<article class="category-card"><div class="card-top"><span class="category-icon">文</span></div><strong>Interface language</strong><p>English is the default language. Persian is available with right-to-left layout support.</p><button class="filter-button" id="settings-language">Switch language</button></article><article class="category-card"><div class="card-top"><span class="category-icon">◈</span></div><strong>Platform status</strong><p>The current repository contains the initial foundation. Tool execution and integrations are planned work.</p></article>';
+    grid.innerHTML = locale === "fa"
+      ? '<article class="category-card"><div class="card-top"><span class="category-icon">文</span></div><strong>زبان رابط کاربری</strong><p>انگلیسی زبان پیش‌فرض است و فارسی با چیدمان راست‌به‌چپ پشتیبانی می‌شود.</p><button class="filter-button" id="settings-language">تغییر زبان</button></article><article class="category-card"><div class="card-top"><span class="category-icon">◈</span></div><strong>وضعیت پلتفرم</strong><p>مخزن در حال حاضر زیرساخت اولیه را دارد؛ اجرای ابزارها و یکپارچه‌سازی‌ها در برنامه توسعه هستند.</p></article>'
+      : '<article class="category-card"><div class="card-top"><span class="category-icon">文</span></div><strong>Interface language</strong><p>English is the default language. Persian is available with right-to-left layout support.</p><button class="filter-button" id="settings-language">Switch language</button></article><article class="category-card"><div class="card-top"><span class="category-icon">◈</span></div><strong>Platform status</strong><p>The current repository contains the initial foundation. Tool execution and integrations are planned work.</p></article>';
     $("#result-count").textContent = locale === "fa" ? "تنظیمات" : "SETTINGS";
     $("#empty-state").hidden = true;
     const switchButton = $("#settings-language");
@@ -93,9 +115,10 @@ function renderDomains() {
   });
   grid.innerHTML = visible.map((item) => {
     const title = locale === "fa" ? namesFa[item[0]] : item[1];
+    const description = locale === "fa" ? descriptionsFa[item[0]] : item[2];
     return '<button class="category-card" data-category="' + item[0] + '" aria-label="' + title + '">' +
       '<span class="card-top"><span class="category-icon">' + item[3] + '</span><span class="card-arrow">' + (favorites.has(item[0]) ? "★" : "↗") + '</span></span>' +
-      '<strong>' + title + '</strong><p>' + item[2] + '</p></button>';
+      '<strong>' + title + '</strong><p>' + description + '</p></button>';
   }).join("");
   $("#result-count").textContent = locale === "fa" ? visible.length + " حوزه" : visible.length + " DOMAINS";
   $("#empty-state").hidden = visible.length !== 0;
