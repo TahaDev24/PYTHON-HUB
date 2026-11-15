@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b14" />
+    <meta name="description" content="PYTHON HUB — one responsive workspace for exploring the Python ecosystem." />
+    <title>PYTHON HUB — Developer Ecosystem</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="PYTHON HUB home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span class="brand-copy"><strong>PYTHON<span>HUB</span></strong><small>DEVELOPER ECOSYSTEM</small></span>
+        </a>
+        <div class="workspace-label" data-i18n="workspace">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="overview"><span class="nav-icon">⌂</span><span data-i18n="overview">Overview</span></button>
+          <button class="nav-item" data-view="ecosystem"><span class="nav-icon">◈</span><span data-i18n="ecosystem">Ecosystem</span><span class="nav-count">18</span></button>
+          <button class="nav-item" data-view="favorites"><span class="nav-icon">☆</span><span data-i18n="favorites">Favorites</span></button>
+        </nav>
+        <div class="workspace-label tools-label" data-i18n="discover">DISCOVER</div>
+        <div class="sidebar-note"><span class="note-orb"></span><div><strong data-i18n="early">Early foundation</strong><small data-i18n="earlyText">The platform is taking shape.</small></div></div>
+        <div class="sidebar-bottom">
+          <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span><span data-i18n="settings">Settings</span></button>
+          <div class="profile-row"><div class="profile-avatar">TH</div><div><strong>TahaDev24</strong><small data-i18n="creator">Creator</small></div><span class="profile-dot"></span></div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation">☰</button>
+          <div class="breadcrumb"><span>PYTHON HUB</span><i>/</i><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="top-actions">
+            <label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search ecosystem..." autocomplete="off" /><kbd>⌘ K</kbd></label>
+            <button class="language-button" id="language-toggle" aria-label="Switch language">FA <span>⌄</span></button>
+          </div>
+        </header>
+        <section class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="live-dot"></span><span data-i18n="heroEyebrow">THE PYTHON ECOSYSTEM, CONNECTED</span></div>
+            <h1><span data-i18n="heroLineOne">Your Python world.</span><br /><em data-i18n="heroLineTwo">One workspace.</em></h1>
+            <p data-i18n="heroDescription">Explore the tools, workflows, and technologies that power modern Python development — all through one evolving platform.</p>
+            <div class="hero-actions"><button class="primary-button" id="explore-button"><span>↗</span><span data-i18n="explore">Explore ecosystem</span></button><span class="hero-caption" data-i18n="heroCaption">18 domains · One unified vision</span></div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orbit orbit-large"></div><div class="orbit orbit-small"></div>
+            <div class="core-glow"></div><div class="core-logo"><span>Py</span><i>HUB</i></div>
+            <div class="orbit-node node-one">AI</div><div class="orbit-node node-two">{ }</div><div class="orbit-node node-three">DB</div><div class="orbit-node node-four">API</div>
+            <div class="visual-label label-top">MODULAR CORE</div><div class="visual-label label-bottom">BUILT TO CONNECT</div>
+          </div>
+        </section>
+        <section class="section-heading" id="catalog-section">
+          <div><div class="section-kicker" data-i18n="directory">THE DIRECTORY</div><h2 id="section-title" data-i18n="domainsTitle">Explore the ecosystem</h2><p id="section-subtitle" data-i18n="domainsSubtitle">A map of the Python domains this platform is designed to bring together.</p></div>
+          <div class="section-tools"><span class="result-count" id="result-count">18 DOMAINS</span><button class="filter-button" id="clear-search" hidden data-i18n="clear">Clear search</button></div>
+        </section>
+        <section class="category-grid" id="category-grid" aria-live="polite"></section>
+        <section class="empty-state" id="empty-state" hidden><div class="empty-symbol">⌕</div><h3 data-i18n="noResults">No matching domains</h3><p data-i18n="trySearch">Try another search term.</p></section>
+        <footer class="footer"><span>© 2026 PYTHON HUB <i>·</i> <span data-i18n="footerBy">Built by TahaDev24</span></span><span class="footer-status"><b></b><span data-i18n="foundationStatus">FOUNDATION PREVIEW</span></span></footer>
+      </main>
+    </div>
+  </body>
+</html>

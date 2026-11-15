@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible problem in PYTHON HUB.
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please search existing issues first. Never include credentials or private user data.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and expected behavior.
+      placeholder: A clear and concise description.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: PYTHON HUB version or commit
+      placeholder: "0.1.0 or commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.12.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux, Android, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest safe, reproducible sequence.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Remove tokens, usernames, paths, and private information before posting.
+      render: text
+    validations:
+      required: false

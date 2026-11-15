@@ -1,0 +1,32 @@
+name: Feature request
+description: Propose a capability or improvement.
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Explain the user problem, not only the proposed implementation.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed experience
+      description: Describe how the capability should work and who benefits.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
+  - type: textarea
+    id: risks
+    attributes:
+      label: Security, privacy, licensing, or platform considerations
+      description: Mention permissions, external tools, data handling, or compatibility.
+    validations:
+      required: false
