@@ -51,7 +51,7 @@ Follow the [roadmap](docs/ROADMAP.md) for the intended delivery sequence.
 Requirements: Python 3.11 or newer.
 
 ~~~bash
-git clone https://github.com/TahaDev24/PYTHON-HUB.git
+git clone --branch feature/platform-foundation --single-branch https://github.com/TahaDev24/PYTHON-HUB.git
 cd PYTHON-HUB
 python -m venv .venv
 # Activate the environment, then:
